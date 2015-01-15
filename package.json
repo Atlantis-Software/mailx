@@ -1,0 +1,30 @@
+{
+  "name": "mailx",
+  "version": "0.0.1",
+  "description": "POP,IMAP and SMTP clients",
+  "main": "mail.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Atlantis-Software/mailx.git"
+  },
+  "keywords": [
+    "mail",
+    "email",
+    "pop",
+    "pop3",
+    "imap",
+    "smtp"
+  ],
+  "author": {
+    "name": "Atlantis Software"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "asynk": "~0.0.1",
+    "underscore": ">=1.7.0",
+    "imap": "~0.8.14",
+    "mailparser": "~0.4.6",
+    "nodemailer": "~1.3.0",
+    "poplib": "~0.1.7"
+  }
+}
