@@ -1,8 +1,8 @@
 {
   "name": "mailx",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "POP,IMAP and SMTP clients",
-  "main": "mail.js",
+  "main": "main.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/Atlantis-Software/mailx.git"
