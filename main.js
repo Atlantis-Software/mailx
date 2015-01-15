@@ -11,7 +11,7 @@ module.exports = {
     store: function(protocol, host, port, login, password) {
         return new Store(protocol, host, port, login, password);
     },
-    message: Message.Create
+    message: Message.create
 };
 
 
