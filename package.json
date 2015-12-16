@@ -1,7 +1,7 @@
 {
   "name": "mailx",
-  "version": "0.0.8",
-  "description": "POP,IMAP and SMTP clients",
+  "version": "0.0.9",
+  "description": "simple and complete email client library (pop, imap and smtp) for nodejs",
   "main": "main.js",
   "repository": {
     "type": "git",
@@ -20,11 +20,16 @@
   },
   "license": "MIT",
   "dependencies": {
-    "asynk": "~0.0.1",
-    "underscore": ">=1.7.0",
-    "imap": "~0.8.14",
-    "mailparser": "~0.4.6",
-    "nodemailer": "~1.3.0",
-    "poplib": "~0.1.7"
-  }
+    "asynk": "~0.0.9",
+    "underscore": ">=1.8.3",
+    "imap": "~0.8.16",
+    "mailparser": "~0.5.3",
+    "nodemailer": "~1.10.0",
+    "optimist": "*"
+  },
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/Atlantis-Software/mailx/issues"
+  },
+  "homepage": "https://github.com/Atlantis-Software/mailx"
 }

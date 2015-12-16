@@ -1,7 +1,7 @@
 Mailx
 -------
 
-mailx is an unified set of POP,IMAP and SMTP clients.
+mailx is a simple and complete email client library (pop, imap and smtp) for nodejs. 
 
 ----------
 
@@ -26,7 +26,7 @@ the transport objet is used to send a predefined message.
 ```javascript
 var transport = mailx.transport('smtp.host.com', 25, 'login', 'password');
 transport.send(message, function(err,result) {
-	console.log(result);
+    console.log(result);
 });
 ```
 
@@ -35,16 +35,28 @@ transport.send(message, function(err,result) {
 
 <i class="icon-download"></i> Store object
 
-**Sample:** get all message from server and log their subjets
+**Sample:** get all message from server, log their subjets and delete the last one
 ```javascript
 var store = mailx.store('pop3', 'pop.host.com', 110, 'login', 'password');
-var callback = function(err, messages, box){
-	store.close();
-};
-var handler = function(err, message){
-	if (!err) {
-		console.log(message.subjet);
-	}
-};
-store.getInboxMessages(0, handler, callback);
+store.connect(function(err) {
+  if (err) {
+    return console.log('connect error', err);
+  }
+  store.getInboxMessages(0, function(err, messages) {
+    if (err) {
+      return console.log('inbox error', err);
+    }
+    messages.forEach(function(message,index) {
+      console.log(message.subject);
+      if (index === messages.length - 1) {
+        message.delete(function(err, data) {
+          console.log('message deleted!', data);
+          store.close(function(err, data) {
+            console.log('store.close err:', err);
+          });
+        });
+      }
+    });
+  });
+});
 ```
