@@ -1,6 +1,6 @@
 {
   "name": "mailx",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "simple and complete email client library (pop, imap and smtp) for nodejs",
   "main": "main.js",
   "repository": {
@@ -23,13 +23,16 @@
     "asynk": "~0.0.9",
     "underscore": ">=1.8.3",
     "imap": "~0.8.16",
-    "mailparser": "~0.5.3",
-    "nodemailer": "~1.10.0",
+    "mailparser": "~0.6.0",
+    "nodemailer": "~2.4.2",
     "optimist": "*"
   },
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/Atlantis-Software/mailx/issues"
   },
-  "homepage": "https://github.com/Atlantis-Software/mailx"
+  "homepage": "https://github.com/Atlantis-Software/mailx",
+  "readme": "Mailx\n-------\n\nmailx is a simple and complete email client library (pop, imap and smtp) for nodejs. \n\n----------\n\n<i class=\"icon-pencil\"></i> Write and send an Email\n---------------------------------------------------\n\n#### <i class=\"icon-file\"></i> Message objet\nthe message object is used to write or read a message.\n\n**Sample:** write a new message\n```javascript\nvar message = mailx.message();\nmessage.setFrom('me', 'me@my-domain.com');\nmessage.addTo('you', 'you@your-domain.com');\nmessage.setSubject('hello');\nmessage.setText('hi ! how are u?');\n```\n#### <i class=\"icon-upload\"></i> Transport object\nthe transport objet is used to send a predefined message.\n\n**Sample:** sending a message\n```javascript\nvar transport = mailx.transport('smtp.host.com', 25, 'login', 'password');\ntransport.send(message, function(err,result) {\n    console.log(result);\n});\n```\n\n<i class=\"icon-download\"></i> Receive Email\n-------------------------------------------\n\n<i class=\"icon-download\"></i> Store object\n\n**Sample:** get all message from server, log their subjets and delete the last one\n```javascript\nvar store = mailx.store('pop3', 'pop.host.com', 110, 'login', 'password');\nstore.connect(function(err) {\n  if (err) {\n    return console.log('connect error', err);\n  }\n  store.getInboxMessages(0, function(err, messages) {\n    if (err) {\n      return console.log('inbox error', err);\n    }\n    messages.forEach(function(message,index) {\n      console.log(message.subject);\n      if (index === messages.length - 1) {\n        message.delete(function(err, data) {\n          console.log('message deleted!', data);\n          store.close(function(err, data) {\n            console.log('store.close err:', err);\n          });\n        });\n      }\n    });\n  });\n});\n```\n",
+  "_id": "mailx@0.0.9",
+  "_from": "mailx@"
 }
