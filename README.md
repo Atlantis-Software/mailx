@@ -35,7 +35,7 @@ transport.send(message, function(err,result) {
 
 <i class="icon-download"></i> Store object
 
-**Sample:** get all message from server, log their subjets and delete the last one
+**Sample:** get all messages from server, log their subjets and delete the last one
 ```javascript
 var store = mailx.store('pop3', 'pop.host.com', 110, 'login', 'password');
 store.connect(function(err) {
@@ -89,3 +89,4 @@ store.connect(function(err) {
   })();
 });
 ```
+
