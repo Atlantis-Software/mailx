@@ -60,3 +60,32 @@ store.connect(function(err) {
   });
 });
 ```
+
+**Sample:** get message by message from server and log their subjets
+```javascript
+var store = mailx.store('imap', 'imap.host.com', 143, 'login', 'password');
+store.connect(function(err) {
+  if (err) {
+    return console.log('err connect: ', err);
+  }
+  var inbox = store.getInbox(1);
+  inbox.fail(function(err){
+    console.log('fail get messages: ', err);
+  });
+  inbox.done(function(status){  
+    console.log('end of inbox');
+  });
+  (function recursiveRcpt() {
+    inbox.getNextMessage(function(err, message) {
+      if (err) {
+        return console.log('fail get message: ', err);
+      }
+      if (message === null) {
+        return console.log('no more message to read');
+      }
+      console.log(message.subject);
+      recursiveRcpt();
+    });
+  })();
+});
+```
