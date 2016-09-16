@@ -17,7 +17,8 @@ var message = mailx.message();
 message.setFrom('me', 'me@my-domain.com');
 message.addTo('you', 'you@your-domain.com');
 message.setSubject('hello');
-message.setText('hi ! how are u?');
+message.setText('hi ! how are u?'); 
+message.setHtml('hi ! how are u? <b>hugs</b>');
 ```
 #### <i class="icon-upload"></i> Transport object
 the transport objet is used to send a predefined message.
