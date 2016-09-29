@@ -1,6 +1,6 @@
 {
   "name": "mailx",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "simple and complete email client library (pop, imap and smtp) for nodejs",
   "main": "main.js",
   "scripts": {
