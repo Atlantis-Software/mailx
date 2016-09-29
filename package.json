@@ -3,6 +3,9 @@
   "version": "0.0.10",
   "description": "simple and complete email client library (pop, imap and smtp) for nodejs",
   "main": "main.js",
+  "scripts": {
+    "test": "node test/integration/runner.js"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/Atlantis-Software/mailx.git"
@@ -24,8 +27,15 @@
     "underscore": ">=1.8.3",
     "imap": "~0.8.16",
     "mailparser": "~0.6.0",
-    "nodemailer": "~2.4.2",
+    "nodemailer": "~2.6.4",
     "optimist": "*"
+  },
+  "devDependencies": {
+    "mocha": ">=2.2.5",
+    "smtp-server": ">=1.14.2",
+    "hoodiecrow-imap": ">=2.1.0",
+    "pop-server": "~0.0.1",
+    "mailcomposer": "~3.12.0"
   },
   "readmeFilename": "README.md",
   "bugs": {
