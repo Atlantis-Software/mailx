@@ -1,6 +1,12 @@
 Mailx
 -------
 
+[![npm version](https://badge.fury.io/js/mailx.svg)](https://www.npmjs.com/mailx)
+[![Build Status](https://travis-ci.org/Atlantis-Software/mailx.svg?branch=master)](https://travis-ci.org/Atlantis-Software/mailx)
+[![Coverage Status](https://coveralls.io/repos/github/Atlantis-Software/mailx/badge.svg?branch=master)](https://coveralls.io/github/Atlantis-Software/mailx?branch=master)
+[![NSP Status](https://nodesecurity.io/orgs/atlantis/projects/197e1a87-263d-4dec-90d7-4e1850240fc4/badge)](https://nodesecurity.io/orgs/atlantis/projects/197e1a87-263d-4dec-90d7-4e1850240fc4)
+[![Dependencies Status](https://david-dm.org/Atlantis-Software/mailx.svg)](https://david-dm.org/Atlantis-Software/mailx)
+
 mailx is a simple and complete email client library (pop, imap and smtp) for nodejs. 
 
 ----------
